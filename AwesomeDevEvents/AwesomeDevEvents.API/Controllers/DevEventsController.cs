@@ -73,5 +73,21 @@ namespace AwesomeDevEvents.API.Controllers
 
             return NoContent();
         }
+
+        [HttpPost]
+
+        public IActionResult PostSpeaker(Guid id, DevEventSpeaker speaker)
+        {
+            var devEvent = _context.DevEvents.SingleOrDefault(d => d.Id == id);
+
+            if (devEvent == null)
+            {
+                return NotFound();
+            }
+
+            devEvent.Speakers.Add(speaker);
+
+            return NoContent();
+        }
     }
 }
