@@ -24,7 +24,7 @@
             EndDate = endDate;
         }
 
-        public void Deleted()
+        public void Delete()
         {
             IsDeleted = true;
         }
